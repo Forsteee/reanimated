@@ -8,9 +8,9 @@
 </head>
 <body>
     <?php
-    use App\Models\product_list;
-    $product = product_list::find(1);
-    echo $product->product_category->name;
+    use App\Models\orders;
+    $product = orders::find(1);
+    echo $product->customer;
     ?>
 </body>
 </html>

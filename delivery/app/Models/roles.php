@@ -20,13 +20,13 @@ class roles extends Model
     ];*/
 
      public function users(){ // отношение 1 -> M
-        return $this -> hasMany(User::class);
+        return $this -> hasMany(User::class,'role_id');
      }
 
     public $timestamps = false; // create_at update_at create or not
 
-    public function boot(){// исключение при заполнение несуществующего аттрибута / метод следует вызывать внутри bootметода одного из поставщиков услуг (application's providers)
+    /*public function boot(){// исключение при заполнение несуществующего аттрибута / метод следует вызывать внутри bootметода одного из поставщиков услуг (application's providers)
         Model::preventSilentlyDiscardingAttributes($this->app->isLocal());
-    }
+    }*/
    
 }

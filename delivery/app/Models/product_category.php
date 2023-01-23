@@ -14,7 +14,7 @@ class product_category extends Model
     protected $fillable = ['name']; // массово назначенные поля / с которыми работает пользователь
 
     public function product_lists(){ // отношение 1 -> M
-        return $this -> hasMany(product_list::class);
+        return $this -> hasMany(product_list::class,'category_id');
     }
 
     public $timestamps = true; // create_at update_at create or not

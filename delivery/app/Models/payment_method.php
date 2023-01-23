@@ -14,12 +14,12 @@ class payment_method extends Model
     protected $fillable = ['name']; // массово назначенные поля / с которыми работает пользователь
 
     public function product_categories(){ // отношение 1 -> M
-        return $this -> hasMany(product_category::class);
+        return $this -> hasMany(product_category::class, 'payment_method_id');
     }
 
     public $timestamps = false; // create_at update_at create or not
 
-    public function boot(){// исключение при заполнение несуществующего аттрибута / метод следует вызывать внутри bootметода одного из поставщиков услуг (application's providers)
+    /*public function boot(){// исключение при заполнение несуществующего аттрибута / метод следует вызывать внутри bootметода одного из поставщиков услуг (application's providers)
         Model::preventSilentlyDiscardingAttributes($this->app->isLocal());
-    }
+    }*/
 }

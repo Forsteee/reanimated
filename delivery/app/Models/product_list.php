@@ -19,7 +19,7 @@ class product_list extends Model
     ]; // массово назначенные поля / с которыми работает пользователь
 
     public function product_category (){ // отношение M -> 1
-        return $this->belongsTo('App\Models\product_category','category_id');
+        return $this->belongsTo(product_category::class,'category_id');
     }
 
     public $timestamps = true; // create_at update_at create or not

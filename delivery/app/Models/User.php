@@ -34,7 +34,15 @@ class User extends Authenticatable
     ];
 
     public function role (){ // отношение M -> 1
-        return $this->belongsTo(roles::class);
+        return $this->belongsTo(roles::class, 'role_id');
+    }
+
+    public function order_deliveries(){ // отношение 1 -> M
+        return $this -> hasMany(orders::class, 'delivery_man_id');
+    }
+
+    public function order_customers(){ // отношение 1 -> M
+        return $this -> hasMany(orders::class, 'customer_id');
     }
 
     /**
