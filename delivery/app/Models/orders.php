@@ -23,6 +23,12 @@ class orders extends Model
         'customer_id',
     ]; // массово назначенные поля / с которыми работает пользователь
 
+    // значение по умолчанию для поля нового экземпляра 
+    protected $attributes = [
+        'payment' => false,
+        'delivery' => false,
+    ];
+
     public function purchase_products(){ // отношение 1 -> M
         return $this -> hasMany(purchase_product::class,'order_id');
      }
