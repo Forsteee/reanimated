@@ -8,7 +8,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-secondary">В Корзину</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                            <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ route('product_page', $product)}}">Подробнее</a>
                         </div>
                         <small class="text-muted">{{$product->price}} Р.</small>
                     </div>

@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','App\Http\Controllers\HomeController@index');
+Route::get('/','App\Http\Controllers\HomeController@index')->name('index'); // каталог (главная страница)
 
-/*Route::get('/', function () {
-    return view('home');
-});*/
+Route::get('/categories/{category?}', 'App\Http\Controllers\HomeController@categories') -> name('categories'); // страница всех катгорий 
+
+Route::get('/products/{product_id}','App\Http\Controllers\ProductController@product_page')->name('product_page'); // страничка продукта
+
+Route::get('/basket/{order_id?}','App\Http\Controllers\BasketController@basket')->name('basket'); // набросок корзины
+
