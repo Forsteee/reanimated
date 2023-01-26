@@ -29,9 +29,13 @@ class orders extends Model
         'delivery' => false,
     ];
 
-    public function purchase_products(){ // отношение 1 -> M
-        return $this -> hasMany(purchase_product::class,'order_id');
-     }
+    public function products(){
+        return $this -> belongsToMany(product_list::class)->withPivot('count', 'count_price')->withTimestamps();
+    }
+
+    public function orders_product_lists(){ // отношение 1 -> M
+        return $this -> hasMany(orders_product_list::class,'orders_id');
+    }
 
     public function payment_method (){ // отношение M -> 1
         return $this->belongsTo(payment_method::class,'payment_method_id');

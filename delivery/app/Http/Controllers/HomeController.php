@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\product_list;
 use App\Models\product_category;
+use App\Models\orders;
 
 class HomeController extends Controller
 {

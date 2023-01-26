@@ -19,5 +19,8 @@ Route::get('/categories/{category?}', 'App\Http\Controllers\HomeController@categ
 
 Route::get('/products/{product_id}','App\Http\Controllers\ProductController@product_page')->name('product_page'); // страничка продукта
 
-Route::get('/basket/{order_id?}','App\Http\Controllers\BasketController@basket')->name('basket'); // набросок корзины
+Route::get('/basket','App\Http\Controllers\BasketController@basket')->name('basket'); // набросок корзины
 
+Route::post('basket/add/{product_id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket-add'); // добавление товара в заказ
+
+Route::post('basket/delete/{product_id}', 'App\Http\Controllers\BasketController@deleteProduct')->name('basket-delete-product'); // добавление товара в заказ
