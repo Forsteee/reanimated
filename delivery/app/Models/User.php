@@ -33,6 +33,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $attributes = [
+        'role_id' => 1,
+    ];
+
     public function role (){ // отношение M -> 1
         return $this->belongsTo(roles::class, 'role_id');
     }
