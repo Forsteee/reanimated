@@ -37,8 +37,10 @@
   <div class='container'>
     @yield('content')
   </div>
-  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">Delivery 1001201030502-72</div>
-</nav>
+  <?php
+    /*<nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">Delivery 1001201030502-72</div>
+    </nav>*/
+  ?>
 </body>
 </html>

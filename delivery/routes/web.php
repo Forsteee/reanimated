@@ -24,3 +24,7 @@ Route::get('/basket','App\Http\Controllers\BasketController@basket')->name('bask
 Route::post('basket/add/{product_id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket-add'); // добавление товара в заказ
 
 Route::post('basket/delete/{product_id}', 'App\Http\Controllers\BasketController@deleteProduct')->name('basket-delete-product'); // добавление товара в заказ
+
+Route::get('/basket/confirm','App\Http\Controllers\BasketController@basketConfirmForm')->name('basket-confirm-form');// открыть страничку оформления заказа
+
+Route::post('/basket/confirm', 'App\Http\Controllers\BasketController@orderConfirm')->name('order-confirm');// создать заказ

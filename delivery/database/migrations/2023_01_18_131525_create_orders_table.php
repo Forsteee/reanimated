@@ -17,6 +17,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->float('full_price', 8 , 2 );
             $table->string('adress')->nullable(true);
+            $table->string('fio')->nullable(true);
+            $table->string('telephone')->nullable(true);
             $table->boolean('payment')->default(false);
             $table->boolean('delivery')->default(false);
             $table->dateTime('time_delivery_start')->nullable(true);

@@ -24,6 +24,18 @@ class product_list extends Model
 
     public $timestamps = true; // create_at update_at create or not
 
+    public function countPrice(){ // общая сумма товара в межной таблице
+        $count_price = 0;
+        if(!is_null($this->pivot)){
+            $count_price = $this->price * $this->pivot->count;
+        }else $count_price = $this->price;
+
+        $this->pivot->count_price = $count_price;
+        $this->pivot->update();
+        
+        return $count_price;
+    }
+
     /*public function boot(){// исключение при заполнение несуществующего аттрибута / метод следует вызывать внутри bootметода одного из поставщиков услуг (application's providers)
         Model::preventSilentlyDiscardingAttributes($this->app->isLocal());
     }*/

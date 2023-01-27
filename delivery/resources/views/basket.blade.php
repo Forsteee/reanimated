@@ -18,7 +18,7 @@
             <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></button>
             @csrf
           </form>
-
+          <a>{{ $product->countPrice() }} Р.</a>
         </div>
         <span class="d-block">{{$product->description}}</span>
       </div>
@@ -27,7 +27,8 @@
 
     <div class="d-flex text-muted pt-3">
     <small class="d-block text-end mt-3">
-      <a href="#">Заказать</a>
+      <a href="{{ route('basket-confirm-form') }}">Заказать</a>
+      <a>{{ $order->fullPrice() }} Р.</a>
     </small>
   </div>
 @endsection
